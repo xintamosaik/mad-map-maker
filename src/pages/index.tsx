@@ -27,11 +27,13 @@ const Home: NextPage = () => {
           <AuthShowcase />
         </div>
 
-        <div className="grid grid-cols-3 gap-4">
-          <div className="bg-slate-300 min-w-full min-h-full"></div>
-          <div className="min-w-full min-h-full col-span-2">
-            <canvas className="bg-slate-300 min-w-full min-h-full"></canvas></div>
-
+        <div className="grid grid-cols-3 gap-4 full">
+          <div className="">
+            <canvas className="w-full h-full bg-slate-400"></canvas>
+          </div>
+          <div className="col-span-2">
+            <canvas className="w-full h-full bg-slate-300"></canvas>
+          </div>
         </div>
       </main>
     </>
@@ -55,7 +57,7 @@ const AuthShowcase: React.FC = () => {
         {secretMessage && <span> - {secretMessage}</span>}
       </p>
       <button
-        className="rounded-full bg-white/10 px-4 py-2 my-2 font-semibold text-white no-underline transition hover:bg-white/20"
+        className="my-2 rounded-full bg-white/10 px-4 py-2 font-semibold text-white no-underline transition hover:bg-white/20"
         onClick={sessionData ? () => void signOut() : () => void signIn()}
       >
         {sessionData ? "Sign out" : "Sign in"}
